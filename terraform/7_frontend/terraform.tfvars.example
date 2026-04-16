@@ -1,0 +1,7 @@
+aws_region         = "us-east-1"
+aurora_cluster_arn = "arn:aws:rds:us-east-1:ACCOUNT_ID:cluster:alex-aurora-cluster"
+aurora_secret_arn  = "arn:aws:secretsmanager:us-east-1:ACCOUNT_ID:secret:alex-aurora-credentials-XXXXX"
+sqs_queue_url      = "https://sqs.us-east-1.amazonaws.com/ACCOUNT_ID/nestor-analysis-jobs"
+sqs_queue_arn      = "arn:aws:sqs:us-east-1:ACCOUNT_ID:nestor-analysis-jobs"
+clerk_jwks_url     = "https://your-instance.clerk.accounts.dev/.well-known/jwks.json"
+clerk_issuer       = "https://your-instance.clerk.accounts.dev"

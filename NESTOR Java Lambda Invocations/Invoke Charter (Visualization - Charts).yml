@@ -1,0 +1,159 @@
+info:
+  name: Invoke Charter (Visualization / Charts)
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/2015-03-31/functions/nestor-charter/invocations"
+  headers:
+    - name: X-Amz-Invocation-Type
+      value: ""
+      description: RequestResponse (sync, default) or Event (async)
+      disabled: true
+    - name: X-Amz-Log-Type
+      value: ""
+      description: Set to Tail to include execution log in response header
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "job_id": "",
+        "portfolio_data": {}
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Chart data and visualization specs
+    request:
+      url: "{{baseUrl}}/2015-03-31/functions/nestor-charter/invocations"
+      method: POST
+      headers:
+        - name: X-Amz-Invocation-Type
+          value: ""
+          description: RequestResponse (sync, default) or Event (async)
+          disabled: true
+        - name: X-Amz-Log-Type
+          value: ""
+          description: Set to Tail to include execution log in response header
+          disabled: true
+      body:
+        type: json
+        data: |-
+          {
+            "job_id": "00000000-0000-0000-0000-000000000001",
+            "portfolio_data": {
+              "accounts": [
+                {
+                  "name": "Retirement 401k",
+                  "type": "401k",
+                  "cash_balance": 5000,
+                  "positions": [
+                    {
+                      "symbol": "VTI",
+                      "quantity": 150,
+                      "instrument": {
+                        "name": "Vanguard Total Stock Market ETF",
+                        "current_price": 250,
+                        "instrument_type": "etf",
+                        "allocation_asset_class": {
+                          "equity": 100
+                        },
+                        "allocation_regions": {
+                          "north_america": 100
+                        },
+                        "allocation_sectors": {
+                          "technology": 30,
+                          "healthcare": 15,
+                          "financials": 15,
+                          "consumer_discretionary": 12,
+                          "industrials": 10,
+                          "energy": 5,
+                          "utilities": 3,
+                          "real_estate": 3,
+                          "materials": 3,
+                          "communication": 4
+                        }
+                      }
+                    },
+                    {
+                      "symbol": "BND",
+                      "quantity": 200,
+                      "instrument": {
+                        "name": "Vanguard Total Bond Market ETF",
+                        "current_price": 75,
+                        "instrument_type": "etf",
+                        "allocation_asset_class": {
+                          "fixed_income": 100
+                        },
+                        "allocation_regions": {
+                          "north_america": 100
+                        },
+                        "allocation_sectors": {
+                          "treasury": 45,
+                          "corporate": 30,
+                          "mortgage": 15,
+                          "government_related": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Taxable Brokerage",
+                  "type": "taxable",
+                  "cash_balance": 2500,
+                  "positions": [
+                    {
+                      "symbol": "VXUS",
+                      "quantity": 100,
+                      "instrument": {
+                        "name": "Vanguard Total International Stock ETF",
+                        "current_price": 60,
+                        "instrument_type": "etf",
+                        "allocation_asset_class": {
+                          "equity": 100
+                        },
+                        "allocation_regions": {
+                          "europe": 40,
+                          "asia": 35,
+                          "north_america": 5,
+                          "latin_america": 10,
+                          "africa": 5,
+                          "middle_east": 5
+                        },
+                        "allocation_sectors": {
+                          "technology": 15,
+                          "financials": 20,
+                          "industrials": 12,
+                          "consumer_discretionary": 10,
+                          "healthcare": 10,
+                          "energy": 8,
+                          "materials": 8,
+                          "communication": 7,
+                          "utilities": 5,
+                          "consumer_staples": 5
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+    response:
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{}"

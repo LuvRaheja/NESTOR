@@ -1,0 +1,12 @@
+# Part 4: NESTOR Scheduler Configuration
+# Copy this file to terraform.tfvars and update with your values
+
+# Your AWS region
+aws_region = "us-east-1"
+
+# App Runner service URL for the Researcher agent
+# Get this from terraform output in the Alex terraform/4_researcher directory
+app_runner_url = "https://your-app-runner-url.us-east-1.awsapprunner.com"
+
+# Enable EventBridge scheduler (every 2 hours)
+scheduler_enabled = false

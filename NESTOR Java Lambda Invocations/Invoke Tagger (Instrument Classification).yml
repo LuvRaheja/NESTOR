@@ -1,0 +1,72 @@
+info:
+  name: Invoke Tagger (Instrument Classification)
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/2015-03-31/functions/nestor-tagger/invocations"
+  headers:
+    - name: X-Amz-Invocation-Type
+      value: ""
+      description: RequestResponse (sync, default) or Event (async)
+      disabled: true
+    - name: X-Amz-Log-Type
+      value: ""
+      description: Set to Tail to include execution log in response header
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "instruments": [
+          {
+            "symbol": "",
+            "name": "",
+            "instrument_type": ""
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Tagged instrument data with asset class and allocation breakdowns
+    request:
+      url: "{{baseUrl}}/2015-03-31/functions/nestor-tagger/invocations"
+      method: POST
+      headers:
+        - name: X-Amz-Invocation-Type
+          value: ""
+          description: RequestResponse (sync, default) or Event (async)
+          disabled: true
+        - name: X-Amz-Log-Type
+          value: ""
+          description: Set to Tail to include execution log in response header
+          disabled: true
+      body:
+        type: json
+        data: |-
+          {
+            "instruments": [
+              {
+                "symbol": "VTI",
+                "name": "Vanguard Total Stock Market ETF",
+                "instrument_type": "etf"
+              }
+            ]
+          }
+    response:
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{}"

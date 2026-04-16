@@ -1,0 +1,4 @@
+name: AWS Lambda Invoke API (us-east-1)
+variables:
+  - name: baseUrl
+    value: https://lambda.us-east-1.amazonaws.com

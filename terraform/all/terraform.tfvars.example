@@ -1,0 +1,23 @@
+# Common
+aws_region = "us-east-1"
+
+# Part 3: Ingestion
+sagemaker_endpoint_name = "alex-embedding-endpoint"
+
+# Part 4: Researcher
+app_runner_url    = "https://YOUR_APP_RUNNER_URL"
+scheduler_enabled = false
+
+# Part 5: Database
+min_capacity = 0.5
+max_capacity = 1.0
+
+# Part 6: Agents
+bedrock_model_id   = "openai.gpt-oss-120b-1:0"
+bedrock_region     = "us-east-1"
+sagemaker_endpoint = "alex-embedding-endpoint"
+polygon_api_key    = ""
+
+# Part 7: Frontend
+clerk_jwks_url = "https://YOUR_CLERK_DOMAIN/.well-known/jwks.json"
+clerk_issuer   = "https://YOUR_CLERK_DOMAIN"

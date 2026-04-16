@@ -1,0 +1,405 @@
+openapi: "3.0.3"
+info:
+  title: NESTOR Java Lambda Invocations
+  description: |
+    Collection for invoking all NESTOR Java-based Lambda functions deployed in us-east-1.
+    Account: <YOUR_AWS_ACCOUNT_ID> | Region: us-east-1
+
+    **Authentication:** AWS Signature V4 (Service: lambda, Region: us-east-1)
+    In Bruno, set Auth type to "AWS Sig V4" with your AWS credentials.
+
+    **curl examples** (requires curl 7.75+ for --aws-sigv4):
+    ```
+    # Planner
+    curl -X POST "https://lambda.us-east-1.amazonaws.com/2015-03-31/functions/nestor-planner/invocations" \
+      --aws-sigv4 "aws:amz:us-east-1:lambda" \
+      --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+      -H "Content-Type: application/json" \
+      -H "X-Amz-Invocation-Type: RequestResponse" \
+      -d '{"job_id":"00000000-0000-0000-0000-000000000001"}'
+
+    # Tagger
+    curl -X POST "https://lambda.us-east-1.amazonaws.com/2015-03-31/functions/nestor-tagger/invocations" \
+      --aws-sigv4 "aws:amz:us-east-1:lambda" \
+      --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+      -H "Content-Type: application/json" \
+      -H "X-Amz-Invocation-Type: RequestResponse" \
+      -d '{"instruments":[{"symbol":"VTI","name":"Vanguard Total Stock Market ETF","instrument_type":"etf"}]}'
+
+    # Reporter
+    curl -X POST "https://lambda.us-east-1.amazonaws.com/2015-03-31/functions/nestor-reporter/invocations" \
+      --aws-sigv4 "aws:amz:us-east-1:lambda" \
+      --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+      -H "Content-Type: application/json" \
+      -H "X-Amz-Invocation-Type: RequestResponse" \
+      -d @backend/test_reporter_payload.json
+
+    # Charter
+    curl -X POST "https://lambda.us-east-1.amazonaws.com/2015-03-31/functions/nestor-charter/invocations" \
+      --aws-sigv4 "aws:amz:us-east-1:lambda" \
+      --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+      -H "Content-Type: application/json" \
+      -H "X-Amz-Invocation-Type: RequestResponse" \
+      -d @backend/charter_test_payload.json
+
+    # Retirement
+    curl -X POST "https://lambda.us-east-1.amazonaws.com/2015-03-31/functions/nestor-retirement/invocations" \
+      --aws-sigv4 "aws:amz:us-east-1:lambda" \
+      --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+      -H "Content-Type: application/json" \
+      -H "X-Amz-Invocation-Type: RequestResponse" \
+      -d @backend/test_retirement_payload.json
+    ```
+  version: "1.0.0"
+
+servers:
+  - url: https://lambda.us-east-1.amazonaws.com
+    description: AWS Lambda Invoke API (us-east-1)
+
+paths:
+  /2015-03-31/functions/nestor-planner/invocations:
+    post:
+      operationId: invokePlanner
+      summary: Invoke Planner (Orchestrator)
+      description: |
+        Orchestrator agent — coordinates tagger, reporter, charter, and retirement agents.
+        Timeout: 15 min | Memory: 2048 MB
+        Fetches portfolio from Aurora DB using job_id, then invokes sub-agents via tool-calling.
+      parameters:
+        - $ref: "#/components/parameters/InvocationType"
+        - $ref: "#/components/parameters/LogType"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id]
+              properties:
+                job_id:
+                  type: string
+                  example: "00000000-0000-0000-0000-000000000001"
+            example:
+              job_id: "00000000-0000-0000-0000-000000000001"
+      responses:
+        "200":
+          description: Planner orchestration result
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /2015-03-31/functions/nestor-tagger/invocations:
+    post:
+      operationId: invokeTagger
+      summary: Invoke Tagger (Instrument Classification)
+      description: |
+        Classifies financial instruments — ETF metadata, asset class breakdown, sector/region allocation.
+        Timeout: 5 min | Memory: 1024 MB
+      parameters:
+        - $ref: "#/components/parameters/InvocationType"
+        - $ref: "#/components/parameters/LogType"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [instruments]
+              properties:
+                instruments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      symbol:
+                        type: string
+                      name:
+                        type: string
+                      instrument_type:
+                        type: string
+            example:
+              instruments:
+                - symbol: "VTI"
+                  name: "Vanguard Total Stock Market ETF"
+                  instrument_type: "etf"
+      responses:
+        "200":
+          description: Tagged instrument data with asset class and allocation breakdowns
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /2015-03-31/functions/nestor-reporter/invocations:
+    post:
+      operationId: invokeReporter
+      summary: Invoke Reporter (Portfolio Analysis)
+      description: |
+        Generates portfolio analysis report with market insights from S3 Vectors.
+        Timeout: 5 min | Memory: 1024 MB
+      parameters:
+        - $ref: "#/components/parameters/InvocationType"
+        - $ref: "#/components/parameters/LogType"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, portfolio_data]
+              properties:
+                job_id:
+                  type: string
+                user_data:
+                  type: object
+                  properties:
+                    target_retirement_income:
+                      type: number
+                    years_until_retirement:
+                      type: integer
+                portfolio_data:
+                  type: object
+                  properties:
+                    accounts:
+                      type: array
+                      items:
+                        type: object
+            example:
+              job_id: "00000000-0000-0000-0000-000000000001"
+              user_data:
+                target_retirement_income: 75000
+                years_until_retirement: 25
+              portfolio_data:
+                accounts:
+                  - cash_balance: 5000
+                    name: "401(k)"
+                    positions:
+                      - symbol: "SPY"
+                        quantity: 100
+                        instrument:
+                          name: "SPDR S&P 500 ETF"
+                          current_price: 450
+                          asset_class: "equity"
+                      - symbol: "BND"
+                        quantity: 50
+                        instrument:
+                          name: "Vanguard Total Bond Market ETF"
+                          current_price: 80
+                          asset_class: "fixed_income"
+      responses:
+        "200":
+          description: Markdown portfolio analysis report
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /2015-03-31/functions/nestor-charter/invocations:
+    post:
+      operationId: invokeCharter
+      summary: Invoke Charter (Visualization / Charts)
+      description: |
+        Generates chart data and visualizations for portfolio allocations.
+        Timeout: 5 min | Memory: 1024 MB
+      parameters:
+        - $ref: "#/components/parameters/InvocationType"
+        - $ref: "#/components/parameters/LogType"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, portfolio_data]
+              properties:
+                job_id:
+                  type: string
+                portfolio_data:
+                  type: object
+            example:
+              job_id: "00000000-0000-0000-0000-000000000001"
+              portfolio_data:
+                accounts:
+                  - name: "Retirement 401k"
+                    type: "401k"
+                    cash_balance: 5000.00
+                    positions:
+                      - symbol: "VTI"
+                        quantity: 150
+                        instrument:
+                          name: "Vanguard Total Stock Market ETF"
+                          current_price: 250.00
+                          instrument_type: "etf"
+                          allocation_asset_class:
+                            equity: 100
+                          allocation_regions:
+                            north_america: 100
+                          allocation_sectors:
+                            technology: 30
+                            healthcare: 15
+                            financials: 15
+                            consumer_discretionary: 12
+                            industrials: 10
+                            energy: 5
+                            utilities: 3
+                            real_estate: 3
+                            materials: 3
+                            communication: 4
+                      - symbol: "BND"
+                        quantity: 200
+                        instrument:
+                          name: "Vanguard Total Bond Market ETF"
+                          current_price: 75.00
+                          instrument_type: "etf"
+                          allocation_asset_class:
+                            fixed_income: 100
+                          allocation_regions:
+                            north_america: 100
+                          allocation_sectors:
+                            treasury: 45
+                            corporate: 30
+                            mortgage: 15
+                            government_related: 10
+                  - name: "Taxable Brokerage"
+                    type: "taxable"
+                    cash_balance: 2500.00
+                    positions:
+                      - symbol: "VXUS"
+                        quantity: 100
+                        instrument:
+                          name: "Vanguard Total International Stock ETF"
+                          current_price: 60.00
+                          instrument_type: "etf"
+                          allocation_asset_class:
+                            equity: 100
+                          allocation_regions:
+                            europe: 40
+                            asia: 35
+                            north_america: 5
+                            latin_america: 10
+                            africa: 5
+                            middle_east: 5
+                          allocation_sectors:
+                            technology: 15
+                            financials: 20
+                            industrials: 12
+                            consumer_discretionary: 10
+                            healthcare: 10
+                            energy: 8
+                            materials: 8
+                            communication: 7
+                            utilities: 5
+                            consumer_staples: 5
+      responses:
+        "200":
+          description: Chart data and visualization specs
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /2015-03-31/functions/nestor-retirement/invocations:
+    post:
+      operationId: invokeRetirement
+      summary: Invoke Retirement (Monte Carlo Projections)
+      description: |
+        Runs Monte Carlo simulation for retirement readiness assessment.
+        Timeout: 5 min | Memory: 1024 MB
+      parameters:
+        - $ref: "#/components/parameters/InvocationType"
+        - $ref: "#/components/parameters/LogType"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, portfolio_data]
+              properties:
+                job_id:
+                  type: string
+                portfolio_data:
+                  type: object
+                  properties:
+                    target_retirement_income:
+                      type: number
+                    years_until_retirement:
+                      type: integer
+                    current_age:
+                      type: integer
+                    accounts:
+                      type: array
+                      items:
+                        type: object
+            example:
+              job_id: "00000000-0000-0000-0000-000000000001"
+              portfolio_data:
+                target_retirement_income: 80000
+                years_until_retirement: 25
+                current_age: 40
+                accounts:
+                  - cash_balance: 5000
+                    id: "acct-1"
+                    type: "investment"
+                    name: "Main Investment"
+                    positions:
+                      - symbol: "VTI"
+                        quantity: 100
+                        instrument:
+                          current_price: 250
+                          allocation_asset_class:
+                            equity: 100
+                            real_estate: 0
+                            fixed_income: 0
+                            commodities: 0
+                      - symbol: "BND"
+                        quantity: 50
+                        instrument:
+                          current_price: 80
+                          allocation_asset_class:
+                            equity: 0
+                            real_estate: 0
+                            fixed_income: 100
+                            commodities: 0
+      responses:
+        "200":
+          description: Monte Carlo analysis and retirement readiness narrative
+          content:
+            application/json:
+              schema:
+                type: object
+
+components:
+  parameters:
+    InvocationType:
+      name: X-Amz-Invocation-Type
+      in: header
+      required: false
+      description: "RequestResponse (sync, default) or Event (async)"
+      schema:
+        type: string
+        enum: [RequestResponse, Event]
+        default: RequestResponse
+    LogType:
+      name: X-Amz-Log-Type
+      in: header
+      required: false
+      description: "Set to Tail to include execution log in response header"
+      schema:
+        type: string
+        enum: [None, Tail]
+        default: None
+
+  securitySchemes:
+    awsSigV4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: |
+        AWS Signature V4 authentication.
+        Service: lambda | Region: us-east-1
+        In Bruno: Auth tab → AWS Sig V4 → set Access Key, Secret Key, Region=us-east-1, Service=lambda
+
+security:
+  - awsSigV4: []

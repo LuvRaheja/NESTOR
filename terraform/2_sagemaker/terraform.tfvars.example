@@ -1,0 +1,9 @@
+# Part 2: SageMaker Configuration
+# Region is read automatically from the NESTOR .env file (DEFAULT_AWS_REGION).
+# Only override the variables below if needed.
+
+# SageMaker container image URI (change if using a different region)
+# sagemaker_image_uri = "763104351884.dkr.ecr.us-east-1.amazonaws.com/huggingface-pytorch-inference:1.13.1-transformers4.26.0-cpu-py39-ubuntu20.04"
+
+# HuggingFace model to use for embeddings
+# embedding_model_name = "sentence-transformers/all-MiniLM-L6-v2"

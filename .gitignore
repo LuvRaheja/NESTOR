@@ -1,0 +1,66 @@
+# ============================================================
+# NESTOR Project .gitignore
+# ============================================================
+
+# ── Environment & Secrets ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+
+# ── Terraform ────────────────────────────────────────────────
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
+.terraform.lock.hcl
+crash.log
+
+# ── Java / Maven ─────────────────────────────────────────────
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+.idea/
+*.iml
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ── Node / Frontend ──────────────────────────────────────────
+node_modules/
+.next/
+out/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ── OS Files ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Docker ───────────────────────────────────────────────────
+*.tar
+
+# ── Misc ─────────────────────────────────────────────────────
+*.pem
+*.key

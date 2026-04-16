@@ -1,0 +1,101 @@
+info:
+  name: Invoke Reporter (Portfolio Analysis)
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/2015-03-31/functions/nestor-reporter/invocations"
+  headers:
+    - name: X-Amz-Invocation-Type
+      value: ""
+      description: RequestResponse (sync, default) or Event (async)
+      disabled: true
+    - name: X-Amz-Log-Type
+      value: ""
+      description: Set to Tail to include execution log in response header
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "job_id": "",
+        "user_data": {
+          "target_retirement_income": 0,
+          "years_until_retirement": 0
+        },
+        "portfolio_data": {
+          "accounts": [
+            {}
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Markdown portfolio analysis report
+    request:
+      url: "{{baseUrl}}/2015-03-31/functions/nestor-reporter/invocations"
+      method: POST
+      headers:
+        - name: X-Amz-Invocation-Type
+          value: ""
+          description: RequestResponse (sync, default) or Event (async)
+          disabled: true
+        - name: X-Amz-Log-Type
+          value: ""
+          description: Set to Tail to include execution log in response header
+          disabled: true
+      body:
+        type: json
+        data: |-
+          {
+            "job_id": "00000000-0000-0000-0000-000000000001",
+            "user_data": {
+              "target_retirement_income": 75000,
+              "years_until_retirement": 25
+            },
+            "portfolio_data": {
+              "accounts": [
+                {
+                  "cash_balance": 5000,
+                  "name": "401(k)",
+                  "positions": [
+                    {
+                      "symbol": "SPY",
+                      "quantity": 100,
+                      "instrument": {
+                        "name": "SPDR S&P 500 ETF",
+                        "current_price": 450,
+                        "asset_class": "equity"
+                      }
+                    },
+                    {
+                      "symbol": "BND",
+                      "quantity": 50,
+                      "instrument": {
+                        "name": "Vanguard Total Bond Market ETF",
+                        "current_price": 80,
+                        "asset_class": "fixed_income"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+    response:
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{}"

@@ -1,0 +1,18 @@
+# Part 6: NESTOR Agent Orchestra Configuration (Tagger)
+# Copy this file to terraform.tfvars and update with your values
+
+# Your AWS region for Lambda functions
+# Should match your database region from Part 5
+aws_region = "us-east-1"
+
+# Aurora cluster ARN from Part 5 (get from Terraform output)
+aurora_cluster_arn = "arn:aws:rds:us-east-1:123456789012:cluster:alex-aurora-cluster"
+
+# Aurora secret ARN from Part 5 (get from Terraform output)
+aurora_secret_arn = "arn:aws:secretsmanager:us-east-1:123456789012:secret:alex-aurora-credentials-xxxxx"
+
+# Bedrock model configuration
+bedrock_model_id = "us.amazon.nova-pro-v1:0"
+
+# Bedrock region
+bedrock_region = "us-east-1"

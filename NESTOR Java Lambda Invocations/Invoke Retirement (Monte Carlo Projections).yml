@@ -1,0 +1,109 @@
+info:
+  name: Invoke Retirement (Monte Carlo Projections)
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/2015-03-31/functions/nestor-retirement/invocations"
+  headers:
+    - name: X-Amz-Invocation-Type
+      value: ""
+      description: RequestResponse (sync, default) or Event (async)
+      disabled: true
+    - name: X-Amz-Log-Type
+      value: ""
+      description: Set to Tail to include execution log in response header
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "job_id": "",
+        "portfolio_data": {
+          "target_retirement_income": 0,
+          "years_until_retirement": 0,
+          "current_age": 0,
+          "accounts": [
+            {}
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Monte Carlo analysis and retirement readiness narrative
+    request:
+      url: "{{baseUrl}}/2015-03-31/functions/nestor-retirement/invocations"
+      method: POST
+      headers:
+        - name: X-Amz-Invocation-Type
+          value: ""
+          description: RequestResponse (sync, default) or Event (async)
+          disabled: true
+        - name: X-Amz-Log-Type
+          value: ""
+          description: Set to Tail to include execution log in response header
+          disabled: true
+      body:
+        type: json
+        data: |-
+          {
+            "job_id": "00000000-0000-0000-0000-000000000001",
+            "portfolio_data": {
+              "target_retirement_income": 80000,
+              "years_until_retirement": 25,
+              "current_age": 40,
+              "accounts": [
+                {
+                  "cash_balance": 5000,
+                  "id": "acct-1",
+                  "type": "investment",
+                  "name": "Main Investment",
+                  "positions": [
+                    {
+                      "symbol": "VTI",
+                      "quantity": 100,
+                      "instrument": {
+                        "current_price": 250,
+                        "allocation_asset_class": {
+                          "equity": 100,
+                          "real_estate": 0,
+                          "fixed_income": 0,
+                          "commodities": 0
+                        }
+                      }
+                    },
+                    {
+                      "symbol": "BND",
+                      "quantity": 50,
+                      "instrument": {
+                        "current_price": 80,
+                        "allocation_asset_class": {
+                          "equity": 0,
+                          "real_estate": 0,
+                          "fixed_income": 100,
+                          "commodities": 0
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+    response:
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: "{}"

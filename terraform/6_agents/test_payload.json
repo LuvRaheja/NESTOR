@@ -1,0 +1,9 @@
+{
+  "instruments": [
+    {
+      "symbol": "VTI",
+      "name": "Vanguard Total Stock Market ETF",
+      "instrument_type": "etf"
+    }
+  ]
+}

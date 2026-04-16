@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+}
+
+@theme inline {
+  /* ── Primary ── */
+  --color-primary: #1178A8;
+  --color-primary-light: #E8F4FA;
+  --color-primary-dark: #0B5273;
+
+  /* ── AI Accent ── */
+  --color-ai-accent: #753991;
+  --color-ai-accent-light: #F3EAFF;
+
+  /* ── Gold ── */
+  --color-accent: #B07D00;
+  --color-accent-fill: #FFB707;
+
+  /* ── Neutrals ── */
+  --color-dark: #062147;
+  --color-surface: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-border: #E2E8F0;
+
+  /* ── Semantic ── */
+  --color-success: #047857;
+  --color-success-light: #ECFDF5;
+  --color-error: #DC2626;
+  --color-error-light: #FEF2F2;
+  --color-warning: #B45309;
+  --color-warning-light: #FFFBEB;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ── Base ── */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Focus ring utility ── */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-dark);
+  color: white;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ── Agent animations (motion-safe only) ── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes strong-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(0.95);
+    }
+  }
+
+  .animate-strong-pulse {
+    animation: strong-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes ring-expand {
+    0%   { box-shadow: 0 0 0 0 rgba(117, 57, 145, 0.4); }
+    70%  { box-shadow: 0 0 0 12px rgba(117, 57, 145, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(117, 57, 145, 0); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(117, 57, 145, 0.5), 0 0 40px rgba(117, 57, 145, 0.3);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 30px rgba(117, 57, 145, 0.8), 0 0 60px rgba(117, 57, 145, 0.5);
+    }
+  }
+
+  @keyframes subtle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+  }
+
+  @keyframes slide-up-fade {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-in {
+    from { transform: translateY(16px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  .animate-ring-expand {
+    animation: ring-expand 1.5s ease-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 1.5s ease-in-out infinite;
+  }
+
+  .animate-subtle-bounce {
+    animation: subtle-bounce 1.2s ease-in-out infinite;
+  }
+
+  .animate-slide-up-fade {
+    animation: slide-up-fade 0.4s ease-out both;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.25s ease-out;
+  }
+}
+
+/* ── Reduced motion: disable all custom animations ── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ring-expand,
+  .animate-subtle-bounce,
+  .animate-slide-up-fade,
+  .animate-strong-pulse,
+  .animate-glow-pulse,
+  .animate-slide-in {
+    animation: none !important;
+  }
+}
+
+/* ── Chart fade-in stagger ── */
+.chart-enter {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.chart-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
