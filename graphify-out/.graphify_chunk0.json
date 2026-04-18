@@ -1,0 +1,675 @@
+{
+  "nodes": [
+    {
+      "id": "api_application",
+      "label": "ApiApplication",
+      "file_type": "code"
+    },
+    {
+      "id": "stream_lambda_handler",
+      "label": "StreamLambdaHandler",
+      "file_type": "code"
+    },
+    {
+      "id": "app_config",
+      "label": "AppConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "security_config",
+      "label": "SecurityConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "account_controller",
+      "label": "AccountController",
+      "file_type": "code"
+    },
+    {
+      "id": "analysis_controller",
+      "label": "AnalysisController",
+      "file_type": "code"
+    },
+    {
+      "id": "health_controller",
+      "label": "HealthController",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_controller",
+      "label": "InstrumentController",
+      "file_type": "code"
+    },
+    {
+      "id": "position_controller",
+      "label": "PositionController",
+      "file_type": "code"
+    },
+    {
+      "id": "test_data_controller",
+      "label": "TestDataController",
+      "file_type": "code"
+    },
+    {
+      "id": "user_controller",
+      "label": "UserController",
+      "file_type": "code"
+    },
+    {
+      "id": "global_exception_handler",
+      "label": "GlobalExceptionHandler",
+      "file_type": "code"
+    },
+    {
+      "id": "charter_config",
+      "label": "CharterConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "charter_function",
+      "label": "CharterFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "charter_templates",
+      "label": "CharterTemplates",
+      "file_type": "code"
+    },
+    {
+      "id": "chart_generator",
+      "label": "ChartGenerator",
+      "file_type": "code"
+    },
+    {
+      "id": "portfolio_analyzer",
+      "label": "PortfolioAnalyzer",
+      "file_type": "code"
+    },
+    {
+      "id": "bedrock_converse",
+      "label": "BedrockConverse",
+      "file_type": "code"
+    },
+    {
+      "id": "data_api_client",
+      "label": "DataApiClient",
+      "file_type": "code"
+    },
+    {
+      "id": "user_repository",
+      "label": "UserRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "account_repository",
+      "label": "AccountRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "position_repository",
+      "label": "PositionRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "job_repository",
+      "label": "JobRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_repository",
+      "label": "InstrumentRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "aws_sqs",
+      "label": "AWS SQS (alex-analysis-jobs)",
+      "file_type": "code"
+    },
+    {
+      "id": "aws_bedrock",
+      "label": "AWS Bedrock Runtime",
+      "file_type": "code"
+    },
+    {
+      "id": "aurora_database",
+      "label": "Aurora PostgreSQL (Data API)",
+      "file_type": "code"
+    },
+    {
+      "id": "clerk_auth",
+      "label": "Clerk JWT Authentication",
+      "file_type": "code"
+    },
+    {
+      "id": "aws_cloudwatch",
+      "label": "AWS CloudWatch Logs",
+      "file_type": "code"
+    },
+    {
+      "id": "check_db_script",
+      "label": "check_db.py",
+      "file_type": "code"
+    },
+    {
+      "id": "check_job_details_script",
+      "label": "check_job_details.py",
+      "file_type": "code"
+    },
+    {
+      "id": "test_full_script",
+      "label": "test_full.py (E2E SQS Test)",
+      "file_type": "code"
+    },
+    {
+      "id": "test_multiple_accounts_script",
+      "label": "test_multiple_accounts.py",
+      "file_type": "code"
+    },
+    {
+      "id": "test_scale_script",
+      "label": "test_scale.py (Concurrent Users)",
+      "file_type": "code"
+    },
+    {
+      "id": "test_simple_script",
+      "label": "test_simple.py (Agent Runner)",
+      "file_type": "code"
+    },
+    {
+      "id": "watch_agents_script",
+      "label": "watch_agents.py (Log Watcher)",
+      "file_type": "code"
+    },
+    {
+      "id": "agent_log_watcher",
+      "label": "AgentLogWatcher",
+      "file_type": "code"
+    },
+    {
+      "id": "python_database_client",
+      "label": "Python Database Client",
+      "file_type": "code"
+    },
+    {
+      "id": "planner_agent",
+      "label": "Planner Agent Lambda",
+      "file_type": "code"
+    },
+    {
+      "id": "tagger_agent",
+      "label": "Tagger Agent Lambda",
+      "file_type": "code"
+    },
+    {
+      "id": "reporter_agent",
+      "label": "Reporter Agent Lambda",
+      "file_type": "code"
+    },
+    {
+      "id": "charter_agent",
+      "label": "Charter Agent Lambda",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_agent",
+      "label": "Retirement Agent Lambda",
+      "file_type": "code"
+    },
+    {
+      "id": "spring_cloud_function",
+      "label": "Spring Cloud Function Pattern",
+      "file_type": "code"
+    },
+    {
+      "id": "resilience4j_retry",
+      "label": "Resilience4j Retry",
+      "file_type": "code"
+    },
+    {
+      "id": "api_gateway_httpv2",
+      "label": "API Gateway HTTP API v2",
+      "file_type": "code"
+    }
+  ],
+  "edges": [
+    {
+      "source": "stream_lambda_handler",
+      "target": "api_application",
+      "relation": "proxies API Gateway requests to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "stream_lambda_handler",
+      "target": "api_gateway_httpv2",
+      "relation": "receives HttpApiV2ProxyRequest from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "data_api_client",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "user_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "account_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "position_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "job_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "instrument_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "app_config",
+      "target": "aws_sqs",
+      "relation": "configures SqsClient for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "security_config",
+      "target": "clerk_auth",
+      "relation": "validates JWT tokens via JWKS from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_controller",
+      "target": "account_repository",
+      "relation": "delegates CRUD to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_controller",
+      "target": "position_repository",
+      "relation": "deletes positions via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_controller",
+      "target": "user_repository",
+      "relation": "validates user existence via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "analysis_controller",
+      "target": "job_repository",
+      "relation": "creates and queries jobs via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "analysis_controller",
+      "target": "user_repository",
+      "relation": "validates user existence via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "analysis_controller",
+      "target": "aws_sqs",
+      "relation": "sends analysis job messages to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_controller",
+      "target": "instrument_repository",
+      "relation": "lists instruments via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_controller",
+      "target": "position_repository",
+      "relation": "delegates CRUD to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_controller",
+      "target": "account_repository",
+      "relation": "validates account ownership via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_controller",
+      "target": "instrument_repository",
+      "relation": "enriches positions and auto-creates instruments via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_data_controller",
+      "target": "user_repository",
+      "relation": "checks user existence via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_data_controller",
+      "target": "account_repository",
+      "relation": "creates test accounts via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_data_controller",
+      "target": "position_repository",
+      "relation": "creates test positions via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_data_controller",
+      "target": "instrument_repository",
+      "relation": "seeds instruments via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_controller",
+      "target": "user_repository",
+      "relation": "manages user lifecycle via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_config",
+      "target": "charter_function",
+      "relation": "registers as Spring Cloud Function bean",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_config",
+      "target": "chart_generator",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_config",
+      "target": "bedrock_converse",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_config",
+      "target": "data_api_client",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_config",
+      "target": "job_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_function",
+      "target": "chart_generator",
+      "relation": "delegates chart generation to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_function",
+      "target": "job_repository",
+      "relation": "saves chart results via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_function",
+      "target": "portfolio_analyzer",
+      "relation": "analyzes portfolio data via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_function",
+      "target": "spring_cloud_function",
+      "relation": "implements Function<Map,Map> per",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "chart_generator",
+      "target": "bedrock_converse",
+      "relation": "calls LLM via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "chart_generator",
+      "target": "charter_templates",
+      "relation": "uses prompt templates from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "chart_generator",
+      "target": "resilience4j_retry",
+      "relation": "retries throttled calls via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bedrock_converse",
+      "target": "aws_bedrock",
+      "relation": "wraps Converse API of",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client",
+      "target": "aurora_database",
+      "relation": "executes SQL against",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_repository",
+      "target": "data_api_client",
+      "relation": "executes user queries via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_repository",
+      "target": "data_api_client",
+      "relation": "executes account queries via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_repository",
+      "target": "data_api_client",
+      "relation": "executes position queries via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "job_repository",
+      "target": "data_api_client",
+      "relation": "executes job queries via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_repository",
+      "target": "data_api_client",
+      "relation": "executes instrument queries via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "check_db_script",
+      "target": "python_database_client",
+      "relation": "queries instruments and jobs via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "check_job_details_script",
+      "target": "python_database_client",
+      "relation": "examines completed job details via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_full_script",
+      "target": "python_database_client",
+      "relation": "sets up test data via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_full_script",
+      "target": "aws_sqs",
+      "relation": "triggers analysis by sending messages to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_multiple_accounts_script",
+      "target": "python_database_client",
+      "relation": "creates multi-account test data via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_multiple_accounts_script",
+      "target": "aws_sqs",
+      "relation": "triggers analysis via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_scale_script",
+      "target": "python_database_client",
+      "relation": "creates concurrent test users via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_scale_script",
+      "target": "aws_sqs",
+      "relation": "sends concurrent job messages to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_simple_script",
+      "target": "tagger_agent",
+      "relation": "runs test_simple.py for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_simple_script",
+      "target": "reporter_agent",
+      "relation": "runs test_simple.py for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_simple_script",
+      "target": "charter_agent",
+      "relation": "runs test_simple.py for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_simple_script",
+      "target": "retirement_agent",
+      "relation": "runs test_simple.py for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_simple_script",
+      "target": "planner_agent",
+      "relation": "runs test_simple.py for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "watch_agents_script",
+      "target": "agent_log_watcher",
+      "relation": "instantiates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_log_watcher",
+      "target": "aws_cloudwatch",
+      "relation": "polls log groups from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_log_watcher",
+      "target": "planner_agent",
+      "relation": "monitors logs for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_log_watcher",
+      "target": "tagger_agent",
+      "relation": "monitors logs for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_log_watcher",
+      "target": "reporter_agent",
+      "relation": "monitors logs for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_log_watcher",
+      "target": "charter_agent",
+      "relation": "monitors logs for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_log_watcher",
+      "target": "retirement_agent",
+      "relation": "monitors logs for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "global_exception_handler",
+      "target": "api_application",
+      "relation": "provides centralized error handling for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_analyzer",
+      "target": "charter_function",
+      "relation": "provides pure-computation analysis to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "aws_sqs",
+      "target": "planner_agent",
+      "relation": "delivers job messages to",
+      "confidence": "INFERRED"
+    }
+  ],
+  "hyperedges": [
+    {
+      "nodes": [
+        "planner_agent",
+        "tagger_agent",
+        "reporter_agent",
+        "charter_agent",
+        "retirement_agent"
+      ],
+      "relation": "form the five-agent analysis pipeline orchestrated via SQS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "account_controller",
+        "analysis_controller",
+        "health_controller",
+        "instrument_controller",
+        "position_controller",
+        "test_data_controller",
+        "user_controller"
+      ],
+      "relation": "are REST controllers in the API Spring Boot application",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "user_repository",
+        "account_repository",
+        "position_repository",
+        "job_repository",
+        "instrument_repository"
+      ],
+      "relation": "are repository beans sharing DataApiClient for Aurora access",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}

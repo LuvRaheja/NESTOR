@@ -1,0 +1,968 @@
+{
+  "nodes": [
+    {
+      "id": "data_api_client_java",
+      "label": "DataApiClient (Java)",
+      "file_type": "code"
+    },
+    {
+      "id": "account_repository",
+      "label": "AccountRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_repository",
+      "label": "InstrumentRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "job_repository",
+      "label": "JobRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "position_repository",
+      "label": "PositionRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "user_repository",
+      "label": "UserRepository",
+      "file_type": "code"
+    },
+    {
+      "id": "data_api_client_python",
+      "label": "DataAPIClient (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "database_facade",
+      "label": "Database Facade",
+      "file_type": "code"
+    },
+    {
+      "id": "base_model_python",
+      "label": "BaseModel (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "users_model_python",
+      "label": "Users Model (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "instruments_model_python",
+      "label": "Instruments Model (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "accounts_model_python",
+      "label": "Accounts Model (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "positions_model_python",
+      "label": "Positions Model (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "jobs_model_python",
+      "label": "Jobs Model (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "pydantic_schemas",
+      "label": "Pydantic Validation Schemas",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_create_schema",
+      "label": "InstrumentCreate Schema",
+      "file_type": "code"
+    },
+    {
+      "id": "user_create_schema",
+      "label": "UserCreate Schema",
+      "file_type": "code"
+    },
+    {
+      "id": "account_create_schema",
+      "label": "AccountCreate Schema",
+      "file_type": "code"
+    },
+    {
+      "id": "position_create_schema",
+      "label": "PositionCreate Schema",
+      "file_type": "code"
+    },
+    {
+      "id": "job_create_schema",
+      "label": "JobCreate Schema",
+      "file_type": "code"
+    },
+    {
+      "id": "ingest_function",
+      "label": "IngestFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "ingest_config",
+      "label": "IngestConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "embedding_client",
+      "label": "EmbeddingClient",
+      "file_type": "code"
+    },
+    {
+      "id": "s3_vectors_client",
+      "label": "S3VectorsClient",
+      "file_type": "code"
+    },
+    {
+      "id": "planner_function",
+      "label": "PlannerFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "planner_config",
+      "label": "PlannerConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "agent_orchestrator",
+      "label": "AgentOrchestrator",
+      "file_type": "code"
+    },
+    {
+      "id": "lambda_agent_invoker",
+      "label": "LambdaAgentInvoker",
+      "file_type": "code"
+    },
+    {
+      "id": "market_price_updater",
+      "label": "MarketPriceUpdater",
+      "file_type": "code"
+    },
+    {
+      "id": "portfolio_loader",
+      "label": "PortfolioLoader",
+      "file_type": "code"
+    },
+    {
+      "id": "aurora_serverless_v2",
+      "label": "Aurora Serverless v2 (PostgreSQL)",
+      "file_type": "code"
+    },
+    {
+      "id": "rds_data_api",
+      "label": "AWS RDS Data API",
+      "file_type": "code"
+    },
+    {
+      "id": "sagemaker_endpoint",
+      "label": "SageMaker HuggingFace Endpoint",
+      "file_type": "code"
+    },
+    {
+      "id": "s3_vectors_service",
+      "label": "AWS S3 Vectors",
+      "file_type": "code"
+    },
+    {
+      "id": "bedrock_converse_api",
+      "label": "Bedrock Converse API",
+      "file_type": "code"
+    },
+    {
+      "id": "aws_lambda_service",
+      "label": "AWS Lambda Service",
+      "file_type": "code"
+    },
+    {
+      "id": "polygon_io_api",
+      "label": "Polygon.io Market Data API",
+      "file_type": "code"
+    },
+    {
+      "id": "users_table",
+      "label": "users Table",
+      "file_type": "code"
+    },
+    {
+      "id": "instruments_table",
+      "label": "instruments Table",
+      "file_type": "code"
+    },
+    {
+      "id": "accounts_table",
+      "label": "accounts Table",
+      "file_type": "code"
+    },
+    {
+      "id": "positions_table",
+      "label": "positions Table",
+      "file_type": "code"
+    },
+    {
+      "id": "jobs_table",
+      "label": "jobs Table",
+      "file_type": "code"
+    },
+    {
+      "id": "reset_db_script",
+      "label": "reset_db.py",
+      "file_type": "code"
+    },
+    {
+      "id": "run_migrations_script",
+      "label": "run_migrations.py",
+      "file_type": "code"
+    },
+    {
+      "id": "seed_data_script",
+      "label": "seed_data.py",
+      "file_type": "code"
+    },
+    {
+      "id": "test_data_api_script",
+      "label": "test_data_api.py",
+      "file_type": "code"
+    },
+    {
+      "id": "update_region_targets_script",
+      "label": "update_region_targets.py",
+      "file_type": "code"
+    },
+    {
+      "id": "verify_database_script",
+      "label": "verify_database.py",
+      "file_type": "code"
+    },
+    {
+      "id": "tagger_lambda",
+      "label": "Tagger Lambda Agent",
+      "file_type": "code"
+    },
+    {
+      "id": "reporter_lambda",
+      "label": "Reporter Lambda Agent",
+      "file_type": "code"
+    },
+    {
+      "id": "charter_lambda",
+      "label": "Charter Lambda Agent",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_lambda",
+      "label": "Retirement Lambda Agent",
+      "file_type": "code"
+    },
+    {
+      "id": "spring_cloud_function",
+      "label": "Spring Cloud Function Framework",
+      "file_type": "code"
+    },
+    {
+      "id": "resilience4j_retry",
+      "label": "Resilience4j Retry",
+      "file_type": "code"
+    },
+    {
+      "id": "clerk_auth",
+      "label": "Clerk Authentication",
+      "file_type": "code"
+    },
+    {
+      "id": "common_module",
+      "label": "Common Module",
+      "file_type": "code"
+    },
+    {
+      "id": "ingest_module",
+      "label": "Ingest Module",
+      "file_type": "code"
+    },
+    {
+      "id": "planner_module",
+      "label": "Planner Module",
+      "file_type": "code"
+    },
+    {
+      "id": "database_module_python",
+      "label": "Database Module (Python)",
+      "file_type": "code"
+    },
+    {
+      "id": "india_localization",
+      "label": "India Localization Support",
+      "file_type": "code"
+    }
+  ],
+  "edges": [
+    {
+      "source": "account_repository",
+      "target": "data_api_client_java",
+      "relation": "delegates database operations to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_repository",
+      "target": "data_api_client_java",
+      "relation": "delegates database operations to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "job_repository",
+      "target": "data_api_client_java",
+      "relation": "delegates database operations to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_repository",
+      "target": "data_api_client_java",
+      "relation": "delegates database operations to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_repository",
+      "target": "data_api_client_java",
+      "relation": "delegates database operations to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client_java",
+      "target": "rds_data_api",
+      "relation": "wraps calls to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "rds_data_api",
+      "target": "aurora_serverless_v2",
+      "relation": "provides HTTP access to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client_python",
+      "target": "rds_data_api",
+      "relation": "wraps calls to via boto3",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "users_model_python",
+      "target": "base_model_python",
+      "relation": "extends",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instruments_model_python",
+      "target": "base_model_python",
+      "relation": "extends",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "accounts_model_python",
+      "target": "base_model_python",
+      "relation": "extends",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "positions_model_python",
+      "target": "base_model_python",
+      "relation": "extends",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "jobs_model_python",
+      "target": "base_model_python",
+      "relation": "extends",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "base_model_python",
+      "target": "data_api_client_python",
+      "relation": "uses for database access",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "database_facade",
+      "target": "users_model_python",
+      "relation": "aggregates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "database_facade",
+      "target": "instruments_model_python",
+      "relation": "aggregates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "database_facade",
+      "target": "accounts_model_python",
+      "relation": "aggregates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "database_facade",
+      "target": "positions_model_python",
+      "relation": "aggregates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "database_facade",
+      "target": "jobs_model_python",
+      "relation": "aggregates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instruments_model_python",
+      "target": "instrument_create_schema",
+      "relation": "validates input with",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_create_schema",
+      "target": "pydantic_schemas",
+      "relation": "defined in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_create_schema",
+      "target": "pydantic_schemas",
+      "relation": "defined in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_create_schema",
+      "target": "pydantic_schemas",
+      "relation": "defined in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_create_schema",
+      "target": "pydantic_schemas",
+      "relation": "defined in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "job_create_schema",
+      "target": "pydantic_schemas",
+      "relation": "defined in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_function",
+      "target": "embedding_client",
+      "relation": "generates embeddings via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_function",
+      "target": "s3_vectors_client",
+      "relation": "stores vectors via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_config",
+      "target": "ingest_function",
+      "relation": "configures and registers bean",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_config",
+      "target": "embedding_client",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_config",
+      "target": "s3_vectors_client",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "embedding_client",
+      "target": "sagemaker_endpoint",
+      "relation": "invokes to generate 384-dim embeddings",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "s3_vectors_client",
+      "target": "s3_vectors_service",
+      "relation": "stores embedding vectors in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "job_repository",
+      "relation": "manages job lifecycle via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "portfolio_loader",
+      "relation": "loads portfolio data via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "market_price_updater",
+      "relation": "updates prices via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "lambda_agent_invoker",
+      "relation": "calls tagger for missing instruments via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "agent_orchestrator",
+      "relation": "delegates agent coordination to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "resilience4j_retry",
+      "relation": "retries Bedrock throttling with",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "planner_function",
+      "relation": "configures and registers bean",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "agent_orchestrator",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "lambda_agent_invoker",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "portfolio_loader",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "market_price_updater",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "data_api_client_java",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "job_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "user_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "account_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "position_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_config",
+      "target": "instrument_repository",
+      "relation": "creates bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "bedrock_converse_api",
+      "relation": "uses multi-turn tool-calling via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "lambda_agent_invoker",
+      "relation": "executes child agents through",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "reporter_lambda",
+      "relation": "orchestrates invoke_reporter tool to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "charter_lambda",
+      "relation": "orchestrates invoke_charter tool to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "retirement_lambda",
+      "relation": "orchestrates invoke_retirement tool to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "lambda_agent_invoker",
+      "target": "aws_lambda_service",
+      "relation": "synchronously invokes functions via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "lambda_agent_invoker",
+      "target": "tagger_lambda",
+      "relation": "invokes for instrument classification",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "lambda_agent_invoker",
+      "target": "reporter_lambda",
+      "relation": "invokes for portfolio analysis narrative",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "lambda_agent_invoker",
+      "target": "charter_lambda",
+      "relation": "invokes for portfolio visualizations",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "lambda_agent_invoker",
+      "target": "retirement_lambda",
+      "relation": "invokes for retirement projections",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "market_price_updater",
+      "target": "polygon_io_api",
+      "relation": "fetches previous close prices from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "market_price_updater",
+      "target": "instrument_repository",
+      "relation": "reads instruments from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "market_price_updater",
+      "target": "data_api_client_java",
+      "relation": "updates prices via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "job_repository",
+      "relation": "reads job data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "user_repository",
+      "relation": "reads user data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "account_repository",
+      "relation": "reads account data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "position_repository",
+      "relation": "reads position data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "instrument_repository",
+      "relation": "reads instrument data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_repository",
+      "target": "accounts_table",
+      "relation": "operates on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_repository",
+      "target": "instruments_table",
+      "relation": "operates on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "job_repository",
+      "target": "jobs_table",
+      "relation": "operates on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_repository",
+      "target": "positions_table",
+      "relation": "operates on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_repository",
+      "target": "users_table",
+      "relation": "operates on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "accounts_table",
+      "target": "users_table",
+      "relation": "references via clerk_user_id FK",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "positions_table",
+      "target": "accounts_table",
+      "relation": "references via account_id FK",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "positions_table",
+      "target": "instruments_table",
+      "relation": "references via symbol FK",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "jobs_table",
+      "target": "users_table",
+      "relation": "references via clerk_user_id FK",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "users_table",
+      "target": "clerk_auth",
+      "relation": "identifies users via clerk_user_id from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reset_db_script",
+      "target": "data_api_client_python",
+      "relation": "uses to drop tables",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reset_db_script",
+      "target": "run_migrations_script",
+      "relation": "invokes after drop",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reset_db_script",
+      "target": "seed_data_script",
+      "relation": "invokes to load data",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "run_migrations_script",
+      "target": "rds_data_api",
+      "relation": "executes DDL statements via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "seed_data_script",
+      "target": "rds_data_api",
+      "relation": "inserts ETF instrument data via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "seed_data_script",
+      "target": "instrument_create_schema",
+      "relation": "validates instruments with",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "test_data_api_script",
+      "target": "rds_data_api",
+      "relation": "verifies connection to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "verify_database_script",
+      "target": "rds_data_api",
+      "relation": "queries tables and validates via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "update_region_targets_script",
+      "target": "rds_data_api",
+      "relation": "updates Indian users via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "update_region_targets_script",
+      "target": "india_localization",
+      "relation": "implements",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_create_schema",
+      "target": "india_localization",
+      "relation": "includes fields for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_function",
+      "target": "spring_cloud_function",
+      "relation": "implements Function interface for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "spring_cloud_function",
+      "relation": "implements Function interface for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "account_repository",
+      "target": "common_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_repository",
+      "target": "common_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "job_repository",
+      "target": "common_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "position_repository",
+      "target": "common_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "user_repository",
+      "target": "common_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client_java",
+      "target": "common_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_function",
+      "target": "ingest_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_function",
+      "target": "planner_module",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client_python",
+      "target": "database_module_python",
+      "relation": "belongs to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_module",
+      "target": "common_module",
+      "relation": "depends on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_module",
+      "target": "common_module",
+      "relation": "does not depend on",
+      "confidence": "INFERRED"
+    }
+  ],
+  "hyperedges": [
+    {
+      "nodes": [
+        "reporter_lambda",
+        "charter_lambda",
+        "retirement_lambda",
+        "tagger_lambda"
+      ],
+      "relation": "child agent Lambdas orchestrated by planner",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "users_table",
+        "accounts_table",
+        "positions_table",
+        "instruments_table",
+        "jobs_table"
+      ],
+      "relation": "PostgreSQL schema tables in Aurora Serverless v2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "account_repository",
+        "instrument_repository",
+        "job_repository",
+        "position_repository",
+        "user_repository"
+      ],
+      "relation": "repository pattern classes sharing DataApiClient",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "planner_function",
+        "agent_orchestrator",
+        "lambda_agent_invoker",
+        "portfolio_loader",
+        "market_price_updater"
+      ],
+      "relation": "planner pipeline components wired via Spring DI",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "instrument_create_schema",
+        "user_create_schema",
+        "account_create_schema",
+        "position_create_schema",
+        "job_create_schema"
+      ],
+      "relation": "Pydantic validation schemas for LLM tool interfaces",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}

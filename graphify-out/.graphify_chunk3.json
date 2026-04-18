@@ -1,0 +1,555 @@
+{
+  "nodes": [
+    {
+      "id": "nestor_platform",
+      "label": "NESTOR Platform",
+      "file_type": "document"
+    },
+    {
+      "id": "backend",
+      "label": "Backend (Maven Multi-Module)",
+      "file_type": "document"
+    },
+    {
+      "id": "api_lambda",
+      "label": "nestor-api (REST API Lambda)",
+      "file_type": "document"
+    },
+    {
+      "id": "planner_lambda",
+      "label": "nestor-planner (Orchestrator Agent)",
+      "file_type": "document"
+    },
+    {
+      "id": "tagger_lambda",
+      "label": "nestor-tagger (Classification Agent)",
+      "file_type": "document"
+    },
+    {
+      "id": "reporter_lambda",
+      "label": "nestor-reporter (Narrative Agent)",
+      "file_type": "document"
+    },
+    {
+      "id": "charter_lambda",
+      "label": "nestor-charter (Visualization Agent)",
+      "file_type": "document"
+    },
+    {
+      "id": "retirement_lambda",
+      "label": "nestor-retirement (Projection Agent)",
+      "file_type": "document"
+    },
+    {
+      "id": "ingest_lambda",
+      "label": "nestor-ingest (Document Ingestion Agent)",
+      "file_type": "document"
+    },
+    {
+      "id": "scheduler_lambda",
+      "label": "nestor-scheduler (EventBridge Bridge)",
+      "file_type": "document"
+    },
+    {
+      "id": "common_lib",
+      "label": "nestor-common (Shared Library)",
+      "file_type": "document"
+    },
+    {
+      "id": "database_pkg",
+      "label": "database (Python Schema/Migrations)",
+      "file_type": "document"
+    },
+    {
+      "id": "aurora_postgres",
+      "label": "Aurora Serverless v2 PostgreSQL",
+      "file_type": "document"
+    },
+    {
+      "id": "bedrock_api",
+      "label": "AWS Bedrock Converse API",
+      "file_type": "document"
+    },
+    {
+      "id": "sqs_queue",
+      "label": "SQS Queue (nestor-analysis-jobs)",
+      "file_type": "document"
+    },
+    {
+      "id": "s3_vectors",
+      "label": "S3 Vectors (financial-research)",
+      "file_type": "document"
+    },
+    {
+      "id": "sagemaker_endpoint",
+      "label": "SageMaker Embedding Endpoint (all-MiniLM-L6-v2)",
+      "file_type": "document"
+    },
+    {
+      "id": "polygon_io",
+      "label": "Polygon.io Market Data",
+      "file_type": "document"
+    },
+    {
+      "id": "clerk_auth",
+      "label": "Clerk JWT Authentication",
+      "file_type": "document"
+    },
+    {
+      "id": "eventbridge",
+      "label": "EventBridge Scheduler",
+      "file_type": "document"
+    },
+    {
+      "id": "researcher_apprunner",
+      "label": "Researcher App Runner Service",
+      "file_type": "document"
+    },
+    {
+      "id": "spring_cloud_function",
+      "label": "Spring Cloud Function",
+      "file_type": "document"
+    },
+    {
+      "id": "bedrock_client",
+      "label": "BedrockClient (Resilience4j)",
+      "file_type": "document"
+    },
+    {
+      "id": "data_api_client",
+      "label": "DataApiClient",
+      "file_type": "document"
+    },
+    {
+      "id": "report_judge",
+      "label": "ReportJudge Guardrail",
+      "file_type": "document"
+    },
+    {
+      "id": "monte_carlo_sim",
+      "label": "Monte Carlo Simulation (500 iterations)",
+      "file_type": "document"
+    },
+    {
+      "id": "market_price_updater",
+      "label": "MarketPriceUpdater",
+      "file_type": "document"
+    },
+    {
+      "id": "tool_use_trick",
+      "label": "Tool-Use Trick (Structured Output)",
+      "file_type": "document"
+    },
+    {
+      "id": "recharts",
+      "label": "Recharts (Frontend Charts)",
+      "file_type": "document"
+    },
+    {
+      "id": "api_gateway",
+      "label": "API Gateway",
+      "file_type": "document"
+    }
+  ],
+  "edges": [
+    {
+      "source": "nestor_platform",
+      "target": "backend",
+      "relation": "contains",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "api_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "planner_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "tagger_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "reporter_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "charter_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "retirement_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "ingest_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "scheduler_lambda",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "common_lib",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "backend",
+      "target": "database_pkg",
+      "relation": "contains_module",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "api_lambda",
+      "target": "sqs_queue",
+      "relation": "dispatches_jobs_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "sqs_queue",
+      "target": "planner_lambda",
+      "relation": "triggers",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "tagger_lambda",
+      "relation": "invokes_synchronously",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "reporter_lambda",
+      "relation": "invokes_synchronously",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "charter_lambda",
+      "relation": "invokes_synchronously",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "retirement_lambda",
+      "relation": "invokes_synchronously",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "bedrock_api",
+      "relation": "uses_tool_calling_to_decide_agents",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "polygon_io",
+      "relation": "fetches_market_prices_from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_lambda",
+      "target": "bedrock_api",
+      "relation": "uses_structured_output_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_lambda",
+      "target": "tool_use_trick",
+      "relation": "employs",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_lambda",
+      "target": "aurora_postgres",
+      "relation": "upserts_classifications_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_lambda",
+      "target": "bedrock_api",
+      "relation": "generates_narrative_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_lambda",
+      "target": "report_judge",
+      "relation": "validates_quality_with",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_lambda",
+      "target": "s3_vectors",
+      "relation": "fetches_market_insights_from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_lambda",
+      "target": "sagemaker_endpoint",
+      "relation": "uses_for_semantic_search",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_lambda",
+      "target": "aurora_postgres",
+      "relation": "saves_report_payload_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_judge",
+      "target": "bedrock_api",
+      "relation": "scores_quality_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_lambda",
+      "target": "bedrock_api",
+      "relation": "generates_chart_json_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_lambda",
+      "target": "aurora_postgres",
+      "relation": "saves_charts_payload_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_lambda",
+      "target": "recharts",
+      "relation": "produces_compatible_data_for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_lambda",
+      "target": "monte_carlo_sim",
+      "relation": "runs",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_lambda",
+      "target": "bedrock_api",
+      "relation": "generates_analysis_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_lambda",
+      "target": "aurora_postgres",
+      "relation": "saves_retirement_payload_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_lambda",
+      "target": "sagemaker_endpoint",
+      "relation": "generates_embeddings_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_lambda",
+      "target": "s3_vectors",
+      "relation": "stores_vectors_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_lambda",
+      "target": "api_gateway",
+      "relation": "triggered_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "scheduler_lambda",
+      "target": "eventbridge",
+      "relation": "triggered_by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "scheduler_lambda",
+      "target": "researcher_apprunner",
+      "relation": "sends_http_post_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "researcher_apprunner",
+      "target": "ingest_lambda",
+      "relation": "ingests_results_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "api_lambda",
+      "target": "clerk_auth",
+      "relation": "authenticates_via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "api_lambda",
+      "target": "aurora_postgres",
+      "relation": "performs_crud_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "common_lib",
+      "target": "bedrock_client",
+      "relation": "provides",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "common_lib",
+      "target": "data_api_client",
+      "relation": "provides",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "common_lib",
+      "target": "market_price_updater",
+      "relation": "provides",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "common_lib",
+      "target": "tool_use_trick",
+      "relation": "provides",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bedrock_client",
+      "target": "bedrock_api",
+      "relation": "wraps",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client",
+      "target": "aurora_postgres",
+      "relation": "wraps_aurora_data_api_for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "market_price_updater",
+      "target": "polygon_io",
+      "relation": "fetches_prices_from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "api_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "charter_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "ingest_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "scheduler_lambda",
+      "target": "common_lib",
+      "relation": "depends_on",
+      "confidence": "INFERRED"
+    },
+    {
+      "source": "api_lambda",
+      "target": "spring_cloud_function",
+      "relation": "deployed_as",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_lambda",
+      "target": "spring_cloud_function",
+      "relation": "deployed_as",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "database_pkg",
+      "target": "aurora_postgres",
+      "relation": "manages_schema_of",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "hyperedges": [
+    {
+      "nodes": [
+        "planner_lambda",
+        "reporter_lambda",
+        "charter_lambda",
+        "retirement_lambda",
+        "tagger_lambda"
+      ],
+      "relation": "agent_collaboration_group_orchestrated_by_planner",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "api_lambda",
+        "planner_lambda",
+        "tagger_lambda",
+        "reporter_lambda",
+        "charter_lambda",
+        "retirement_lambda",
+        "ingest_lambda",
+        "scheduler_lambda"
+      ],
+      "relation": "all_deployed_as_docker_container_lambdas_java21",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "api_lambda",
+        "planner_lambda",
+        "tagger_lambda",
+        "reporter_lambda",
+        "charter_lambda",
+        "retirement_lambda"
+      ],
+      "relation": "all_read_write_aurora_via_data_api",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}

@@ -1,0 +1,652 @@
+{
+  "nodes": [
+    {
+      "id": "planner_service",
+      "label": "Planner Service (Orchestrator)",
+      "file_type": "code"
+    },
+    {
+      "id": "planner_templates",
+      "label": "PlannerTemplates",
+      "file_type": "code"
+    },
+    {
+      "id": "portfolio_loader",
+      "label": "PortfolioLoader",
+      "file_type": "code"
+    },
+    {
+      "id": "reporter_service",
+      "label": "Reporter Service",
+      "file_type": "code"
+    },
+    {
+      "id": "reporter_config",
+      "label": "ReporterConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "reporter_function",
+      "label": "ReporterFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "reporter_templates",
+      "label": "ReporterTemplates",
+      "file_type": "code"
+    },
+    {
+      "id": "report_generator",
+      "label": "ReportGenerator",
+      "file_type": "code"
+    },
+    {
+      "id": "report_judge",
+      "label": "ReportJudge",
+      "file_type": "code"
+    },
+    {
+      "id": "market_insights_client",
+      "label": "MarketInsightsClient",
+      "file_type": "code"
+    },
+    {
+      "id": "portfolio_formatter",
+      "label": "PortfolioFormatter",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_service",
+      "label": "Retirement Service",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_config",
+      "label": "RetirementConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_function",
+      "label": "RetirementFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_templates",
+      "label": "RetirementTemplates",
+      "file_type": "code"
+    },
+    {
+      "id": "retirement_analyzer",
+      "label": "RetirementAnalyzer",
+      "file_type": "code"
+    },
+    {
+      "id": "monte_carlo_simulator",
+      "label": "MonteCarloSimulator",
+      "file_type": "code"
+    },
+    {
+      "id": "portfolio_calculator",
+      "label": "PortfolioCalculator",
+      "file_type": "code"
+    },
+    {
+      "id": "india_tax_calculator",
+      "label": "IndiaTaxCalculator",
+      "file_type": "code"
+    },
+    {
+      "id": "scheduler_service",
+      "label": "Scheduler Service",
+      "file_type": "code"
+    },
+    {
+      "id": "scheduler_config",
+      "label": "SchedulerConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "scheduler_function",
+      "label": "SchedulerFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "tagger_service",
+      "label": "Tagger Service",
+      "file_type": "code"
+    },
+    {
+      "id": "tagger_config",
+      "label": "TaggerConfig",
+      "file_type": "code"
+    },
+    {
+      "id": "tagger_function",
+      "label": "TaggerFunction",
+      "file_type": "code"
+    },
+    {
+      "id": "tagger_templates",
+      "label": "TaggerTemplates",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_classifier",
+      "label": "InstrumentClassifier",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_classification_model",
+      "label": "InstrumentClassification",
+      "file_type": "code"
+    },
+    {
+      "id": "bedrock_converse",
+      "label": "BedrockConverse (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "data_api_client",
+      "label": "DataApiClient (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "job_repository",
+      "label": "JobRepository (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "instrument_repository",
+      "label": "InstrumentRepository (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "user_repository",
+      "label": "UserRepository (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "account_repository",
+      "label": "AccountRepository (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "position_repository",
+      "label": "PositionRepository (Common)",
+      "file_type": "code"
+    },
+    {
+      "id": "aws_sagemaker",
+      "label": "AWS SageMaker Embeddings",
+      "file_type": "code"
+    },
+    {
+      "id": "s3_vectors",
+      "label": "S3 Vectors (Semantic Search)",
+      "file_type": "code"
+    },
+    {
+      "id": "aurora_database",
+      "label": "Aurora PostgreSQL",
+      "file_type": "code"
+    },
+    {
+      "id": "aws_eventbridge",
+      "label": "AWS EventBridge",
+      "file_type": "code"
+    },
+    {
+      "id": "app_runner_researcher",
+      "label": "App Runner Researcher Service",
+      "file_type": "code"
+    },
+    {
+      "id": "spring_cloud_function",
+      "label": "Spring Cloud Function (Lambda Adapter)",
+      "file_type": "code"
+    },
+    {
+      "id": "resilience4j_retry",
+      "label": "Resilience4j Retry Pattern",
+      "file_type": "code"
+    },
+    {
+      "id": "structured_output_tool_trick",
+      "label": "Bedrock Tool-Use Structured Output Pattern",
+      "file_type": "code"
+    }
+  ],
+  "edges": [
+    {
+      "source": "planner_templates",
+      "target": "planner_service",
+      "relation": "defines orchestrator system prompt for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_service",
+      "target": "reporter_service",
+      "relation": "orchestrates via invoke_reporter tool",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "planner_service",
+      "target": "retirement_service",
+      "relation": "orchestrates via invoke_retirement tool",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "job_repository",
+      "relation": "loads job data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "user_repository",
+      "relation": "loads user data from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "account_repository",
+      "relation": "loads accounts from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "position_repository",
+      "relation": "loads positions from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "instrument_repository",
+      "relation": "checks instrument allocations via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_loader",
+      "target": "tagger_service",
+      "relation": "identifies missing instruments for classification by",
+      "confidence": "INFERRED"
+    },
+    {
+      "source": "reporter_config",
+      "target": "reporter_function",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_config",
+      "target": "report_generator",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_config",
+      "target": "report_judge",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_config",
+      "target": "market_insights_client",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_config",
+      "target": "spring_cloud_function",
+      "relation": "uses Lambda adapter from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_function",
+      "target": "portfolio_formatter",
+      "relation": "formats portfolio data using",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_function",
+      "target": "market_insights_client",
+      "relation": "fetches market insights via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_function",
+      "target": "report_generator",
+      "relation": "generates report via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_function",
+      "target": "report_judge",
+      "relation": "evaluates report quality via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_function",
+      "target": "job_repository",
+      "relation": "saves report_payload to database via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_generator",
+      "target": "bedrock_converse",
+      "relation": "generates markdown report via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_generator",
+      "target": "reporter_templates",
+      "relation": "uses system prompt from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_generator",
+      "target": "resilience4j_retry",
+      "relation": "retries on ThrottlingException using",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_judge",
+      "target": "bedrock_converse",
+      "relation": "evaluates report quality via structured output from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_judge",
+      "target": "structured_output_tool_trick",
+      "relation": "uses tool-use trick for scoring via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "report_judge",
+      "target": "resilience4j_retry",
+      "relation": "retries on ThrottlingException using",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "market_insights_client",
+      "target": "aws_sagemaker",
+      "relation": "generates query embeddings via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "market_insights_client",
+      "target": "s3_vectors",
+      "relation": "performs semantic search against",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_formatter",
+      "target": "reporter_function",
+      "relation": "provides formatted portfolio text to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_config",
+      "target": "retirement_function",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_config",
+      "target": "retirement_analyzer",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_config",
+      "target": "spring_cloud_function",
+      "relation": "uses Lambda adapter from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_function",
+      "target": "portfolio_calculator",
+      "relation": "calculates portfolio value and allocation via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_function",
+      "target": "monte_carlo_simulator",
+      "relation": "runs retirement simulations via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_function",
+      "target": "india_tax_calculator",
+      "relation": "compares tax regimes via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_function",
+      "target": "retirement_analyzer",
+      "relation": "generates narrative analysis via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_function",
+      "target": "job_repository",
+      "relation": "saves retirement_payload to database via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_analyzer",
+      "target": "bedrock_converse",
+      "relation": "generates narrative analysis via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_analyzer",
+      "target": "retirement_templates",
+      "relation": "uses system prompt from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_analyzer",
+      "target": "resilience4j_retry",
+      "relation": "retries on ThrottlingException using",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "monte_carlo_simulator",
+      "target": "retirement_function",
+      "relation": "provides success rate and percentile distributions to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "portfolio_calculator",
+      "target": "retirement_function",
+      "relation": "provides portfolio value, allocation, and projections to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "india_tax_calculator",
+      "target": "retirement_function",
+      "relation": "provides Old vs New regime tax comparison to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "scheduler_config",
+      "target": "scheduler_function",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "scheduler_function",
+      "target": "aws_eventbridge",
+      "relation": "triggered by scheduled events from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "scheduler_function",
+      "target": "app_runner_researcher",
+      "relation": "POSTs to /research endpoint on",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_config",
+      "target": "tagger_function",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_config",
+      "target": "instrument_classifier",
+      "relation": "configures Spring bean for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_config",
+      "target": "spring_cloud_function",
+      "relation": "uses Lambda adapter from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_function",
+      "target": "instrument_classifier",
+      "relation": "classifies instruments via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_function",
+      "target": "instrument_repository",
+      "relation": "upserts classification results to database via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_classifier",
+      "target": "bedrock_converse",
+      "relation": "classifies instruments via structured output from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_classifier",
+      "target": "tagger_templates",
+      "relation": "uses system and classification prompts from",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_classifier",
+      "target": "instrument_classification_model",
+      "relation": "produces structured results as",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_classifier",
+      "target": "structured_output_tool_trick",
+      "relation": "forces structured JSON via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_classifier",
+      "target": "resilience4j_retry",
+      "relation": "retries on ThrottlingException using",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_classification_model",
+      "target": "instrument_classifier",
+      "relation": "is deserialized by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "data_api_client",
+      "target": "aurora_database",
+      "relation": "connects to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "job_repository",
+      "target": "data_api_client",
+      "relation": "queries database via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "instrument_repository",
+      "target": "data_api_client",
+      "relation": "queries database via",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "reporter_templates",
+      "target": "report_generator",
+      "relation": "provides India/US-aware reporter instructions to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "retirement_templates",
+      "target": "retirement_analyzer",
+      "relation": "provides India/US-aware retirement instructions to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "tagger_templates",
+      "target": "instrument_classifier",
+      "relation": "provides India/US instrument classification prompts to",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "hyperedges": [
+    {
+      "nodes": [
+        "reporter_function",
+        "report_generator",
+        "report_judge"
+      ],
+      "relation": "implements generate-then-judge guardrail pattern",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "reporter_service",
+        "retirement_service",
+        "tagger_service"
+      ],
+      "relation": "are sub-agents orchestrated by planner_service",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "monte_carlo_simulator",
+        "india_tax_calculator",
+        "portfolio_calculator"
+      ],
+      "relation": "perform pre-computation before Bedrock narrative generation in retirement pipeline",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "report_generator",
+        "retirement_analyzer",
+        "instrument_classifier",
+        "report_judge"
+      ],
+      "relation": "all use BedrockConverse with Resilience4j retry for LLM calls",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "reporter_config",
+        "retirement_config",
+        "tagger_config",
+        "scheduler_config"
+      ],
+      "relation": "are Spring Boot apps deployed as AWS Lambda via Spring Cloud Function adapter",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "nodes": [
+        "reporter_templates",
+        "retirement_templates",
+        "tagger_templates",
+        "planner_templates"
+      ],
+      "relation": "define LLM system prompts with India/US localization support",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}
